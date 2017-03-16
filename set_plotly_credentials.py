@@ -1,3 +1,7 @@
+import json
+import plotly
+import plotly.plotly as py
+
 def set_plotly_credentials(credential_json):
     with open(credential_json) as data_file:
         cred_data = json.load(data_file)
