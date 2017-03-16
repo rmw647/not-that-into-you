@@ -20,7 +20,7 @@ def generate_plotly(G, clusters):
     edge_trace = Scatter(
         x=[],
         y=[],
-        line=Line(width=0.5, color='#888'),
+        line=Line(width=0.5, color='#000'),
         hoverinfo='none',
         mode='lines')
 
@@ -37,16 +37,11 @@ def generate_plotly(G, clusters):
         mode='markers',
         hoverinfo='text',
         marker=Marker(
-            showscale=True,
+            showscale=False,
             colorscale='YIGnBu',
             reversescale=True,
             color=[],
             size=10,
-            colorbar=dict(
-                thickness=15,
-                title='Node Connections',
-                xanchor='left',
-                titleside='right'),
             line=dict(width=2)))
 
     for node in G.nodes():
@@ -59,15 +54,15 @@ def generate_plotly(G, clusters):
 
     fig = Figure(data=Data([edge_trace, node_trace]),
                  layout=Layout(
-                     title='<br>Network graph made with Python',
-                     titlefont=dict(size=16),
+                     title='<br><br>Just not into you...<br><br><br><br><br><br><br><br><br><br>',
+                     titlefont=dict(size=20),
                      showlegend=False,
                      width=650,
                      height=650,
                      hovermode='closest',
                      margin=dict(b=20, l=5, r=5, t=40),
                      annotations=[dict(
-                         text="Python code:<a href='https://plot.ly/ipython-notebooks/network-graphs/'> 'https://plot.ly/ipython-notebooks/network-graphs/</a>",
+                         text="",
                          showarrow=False,
                          xref="paper",
                          yref="paper",
@@ -78,4 +73,4 @@ def generate_plotly(G, clusters):
                      yaxis=YAxis(showgrid=False, zeroline=False,
                                  showticklabels=False)))
 
-    return py.iplot(fig, filename='networkx')
+    return py.iplot(fig, filename='networkx', showLink=False)
