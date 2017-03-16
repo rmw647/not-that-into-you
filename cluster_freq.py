@@ -30,6 +30,16 @@ def cluster_freq(clusters, matches):
 
 
 def get_cluster_size(data):
+    """Calculates the size of each data cluster.
+
+    Parameters
+    ----------
+    data: dataframe with cluster labels in column 'cluster_assignment'
+
+    Returns
+    -------
+    dictionary with size of each cluster
+    """
     num_clusters = len(data.cluster_assignment.unique())
     sizes = {}
     for num in range(num_clusters):
