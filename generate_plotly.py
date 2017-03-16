@@ -42,7 +42,7 @@ def generate_plotly(G, clusters):
             reversescale=True,
             color=[],
             size=10,
-            line=dict(width=2,color='rgb(255,255,255)'))
+            line=dict(width=2,color='rgb(255,255,255)')))
 
     for node in G.nodes():
         x, y = G.node[node]['pos']
