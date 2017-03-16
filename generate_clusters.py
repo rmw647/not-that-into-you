@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.cluster import KMeans
 
 def generate_clusters(data,columns,number,column):
 	""" Takes a dataframe and generates clusters based on a
