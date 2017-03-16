@@ -24,8 +24,10 @@ def cluster_freq(clusters, matches):
                         how='left')
     together2 = together2.groupby(['iid_x', 'iid']).last()
     together2['same cluster'] = together2.cluster_x-together2.cluster_y
-    together2[together2['same cluster'] != 0] = 1
+    together2[together2['same cluster'] != 0] = 'Different Clusters'
+    together2[together2['same cluster'] == 0] = 'Same Cluster'
     together2['same cluster'].value_counts().plot(kind='bar')
+    
     plt.show()
 
 
