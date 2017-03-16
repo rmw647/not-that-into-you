@@ -55,7 +55,7 @@ def generate_plotly(G, clusters):
     fig = Figure(data=Data([edge_trace, node_trace]),
                  layout=Layout(
                      title='<br><br>Just not into you...<br><br><br><br><br><br><br><br><br><br><br><br><br><br>',
-                     titlefont=dict(size=18),
+                     titlefont=dict(family='Century Gothic',size=18),
                      showlegend=False,
                      width=650,
                      height=650,
